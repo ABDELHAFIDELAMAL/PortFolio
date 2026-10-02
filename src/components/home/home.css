@@ -1,0 +1,35 @@
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeRight {
+    from { opacity: 0; transform: translateX(-30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(30px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  .animate-float {
+    animation: float 5s ease-in-out infinite;
+  }
+
+  .animate-fade-down {
+    animation: fadeDown 0.8s ease-out forwards;
+  }
+
+  .animate-fade-right {
+    animation: fadeRight 0.9s ease-out forwards;
+  }
+
+  .animate-fade-left {
+    animation: fadeLeft 0.9s ease-out forwards;
+  }
