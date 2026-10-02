@@ -1,1 +1,61 @@
-<p>home works!</p>
+<main id="home" class="relative w-full max-w-7xl mx-auto px-6 pt-4 pb-12 flex-1 flex flex-col justify-between overflow-hidden">
+  
+  <!-- Titre d'arrière-plan: "Hey, there" avec animation Fade-Down -->
+  <div class="text-center my-2 md:my-0 animate-fade-down">
+    <h1 class="text-6xl md:text-8xl lg:text-[110px] font-serif-italic font-normal text-slate-800 tracking-tight leading-none">
+      Hey, <span class="ml-2">there</span>
+    </h1>
+  </div>
+
+  <div class="relative grid grid-cols-1 md:grid-cols-12 gap-8 items-center mt-6 md:mt-0">
+    
+    <div class="md:col-span-5 flex flex-col justify-between h-full space-y-8 z-10 animate-fade-right">
+      <div>
+        <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-slate-200/60 px-4 py-2 rounded-full shadow-sm hover:scale-105 transition-transform duration-300">
+          <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-ping"></span>
+          <span class="text-xs md:text-sm font-medium text-slate-700">Available for new opportunities</span>
+        </div>
+      </div>
+
+      <div class="pt-8 md:pt-16">
+        <h2 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-[0.9] uppercase text-slate-900">
+          I AM<br>
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-slate-900 via-slate-700 to-amber-600">ABDELHAFID</span>
+        </h2>
+      </div>
+    </div>
+
+    <!-- Centre : Image Cutout + Glow Effect & Floating Animation -->
+    <div class="md:col-span-2 flex justify-center items-center relative my-6 md:my-0 z-20">
+      <div class="relative w-64 md:w-80 lg:w-96 flex items-center justify-center group">
+        
+        <!-- خلفية توهج شعاعي خلف الشخصية -->
+        <div class="absolute w-72 h-72 md:w-80 md:h-80 bg-gradient-to-tr from-amber-400/30 to-slate-400/20 rounded-full blur-3xl -z-10 animate-pulse"></div>
+
+        <!-- الصورة بدون خلفية مع حركة طفو ناعمة وتأثير عند حوم الماوس -->
+        <img 
+          src="images/MonPhoto.png"
+          alt="EL AMAL ABDELHAFID" 
+          class="w-full h-auto object-contain filter drop-shadow-[0_20px_30px_rgba(0,0,0,0.15)] animate-float transition-all duration-500 group-hover:scale-105 group-hover:drop-shadow-[0_25px_35px_rgba(245,158,11,0.25)]"
+        >
+      </div>
+    </div>
+
+    <!-- Côté Droit : Description & Titre -->
+    <div class="md:col-span-5 flex flex-col justify-between h-full space-y-8 text-left md:text-right z-10 animate-fade-left">
+      <div class="max-w-xs md:ml-auto">
+        <p class="text-xs md:text-sm font-medium text-slate-700 leading-relaxed">
+          Specialized in Java, Spring Boot, React, Angular, and Modern Web Development.
+        </p>
+      </div>
+
+      <div class="pt-8 md:pt-16">
+        <h3 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-none uppercase text-slate-900">
+          FULL-STACK<br>
+          DEVELOPER
+        </h3>
+      </div>
+    </div>
+
+  </div>
+</main>

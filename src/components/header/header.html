@@ -1,0 +1,25 @@
+
+<header class="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-20">
+  
+    <a class="font-serif text-2xl italic tracking-tight text-black md:text-3xl">
+      Abdelhafid.
+    </a>
+  <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
+    <a href="#home" class="hover:text-black transition-colors">Home</a>
+    <a href="#about" class="hover:text-black transition-colors">About</a>
+    <a href="#skills" class="hover:text-black transition-colors">Skills</a>
+    <a href="#projects" class="hover:text-black transition-colors">Projects</a>
+    <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+  </nav>
+  <div class="hidden md:block">
+    <a class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-sm">
+      Download CV
+    </a>
+  </div>
+  <button (click)="toggleMenu()" class="md:hidden text-slate-800 focus:outline-none" aria-label="Toggle Menu">
+    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
+</header>
+
