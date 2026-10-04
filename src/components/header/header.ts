@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common'; // ضروري باش نستعملو @if أو *ngIf فـ HTML
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +10,7 @@ import { CommonModule } from '@angular/common'; // ضروري باش نستعم�
 })
 export class Header {
   isMenuOpen = false;
+  activeSection = 'home';  
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
@@ -17,9 +18,9 @@ export class Header {
 
   scrollToSection(sectionId: string, event: Event) {
     event.preventDefault();
+    this.activeSection = sectionId; 
     this.isMenuOpen = false;
 
-    // مهلة صغيرة باش يتغلق المنيو فـ Mobile ويرجع السكرول سلس
     setTimeout(() => {
       const element = document.getElementById(sectionId);
       if (element) {
