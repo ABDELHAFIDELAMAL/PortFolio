@@ -10,33 +10,111 @@
 
 
   <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
-    <a href="#home" (click)="scrollToSection('home', $event)" class="hover:text-black transition-colors cursor-pointer">Home</a>
-    <a href="#about" (click)="scrollToSection('about', $event)" class="hover:text-black transition-colors cursor-pointer">About</a>
-    <a href="#skills" (click)="scrollToSection('skills', $event)" class="hover:text-black transition-colors cursor-pointer">Skills</a>
-    <a href="#projects" (click)="scrollToSection('projects', $event)" class="hover:text-black transition-colors cursor-pointer">Projects</a>
-    <a href="#contact" (click)="scrollToSection('contact', $event)" class="hover:text-black transition-colors cursor-pointer">Contact</a>
-  </nav>
+  
+  <!-- Home -->
+  <a 
+    href="#home" 
+    (click)="scrollToSection('home', $event)" 
+    [class.text-black]="activeSection === 'home'"
+    class="relative py-1 transition-colors duration-200 hover:text-black 
+           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-black after:rounded-full after:transition-all after:duration-300"
+    [class.after:w-1/2]="activeSection === 'home'"
+    [class.after:w-0]="activeSection !== 'home'"
+    [class.hover:after:w-1/2]="activeSection !== 'home'"
+  >
+    Home
+  </a>
 
-  <!-- Desktop CTA -->
+  <!-- About -->
+  <a 
+    href="#about" 
+    (click)="scrollToSection('about', $event)" 
+    [class.text-black]="activeSection === 'about'"
+    class="relative py-1 transition-colors duration-200 hover:text-black 
+           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-black after:rounded-full after:transition-all after:duration-300"
+    [class.after:w-1/2]="activeSection === 'about'"
+    [class.after:w-0]="activeSection !== 'about'"
+    [class.hover:after:w-1/2]="activeSection !== 'about'"
+  >
+    About
+  </a>
+
+  <!-- Skills -->
+  <a 
+    href="#skills" 
+    (click)="scrollToSection('skills', $event)" 
+    [class.text-black]="activeSection === 'skills'"
+    class="relative py-1 transition-colors duration-200 hover:text-black 
+           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-black after:rounded-full after:transition-all after:duration-300"
+    [class.after:w-1/2]="activeSection === 'skills'"
+    [class.after:w-0]="activeSection !== 'skills'"
+    [class.hover:after:w-1/2]="activeSection !== 'skills'"
+  >
+    Skills
+  </a>
+
+  <!-- Projects -->
+  <a 
+    href="#projects" 
+    (click)="scrollToSection('projects', $event)" 
+    [class.text-black]="activeSection === 'projects'"
+    class="relative py-1 transition-colors duration-200 hover:text-black 
+           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-black after:rounded-full after:transition-all after:duration-300"
+    [class.after:w-1/2]="activeSection === 'projects'"
+    [class.after:w-0]="activeSection !== 'projects'"
+    [class.hover:after:w-1/2]="activeSection !== 'projects'"
+  >
+    Projects
+  </a>
+
+  <!-- Reviews (الجديدة) -->
+  <a 
+    href="#reviews" 
+    (click)="scrollToSection('reviews', $event)" 
+    [class.text-black]="activeSection === 'reviews'"
+    class="relative py-1 transition-colors duration-200 hover:text-black 
+           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-black after:rounded-full after:transition-all after:duration-300"
+    [class.after:w-1/2]="activeSection === 'reviews'"
+    [class.after:w-0]="activeSection !== 'reviews'"
+    [class.hover:after:w-1/2]="activeSection !== 'reviews'"
+  >
+    Reviews
+  </a>
+
+  <!-- Contact -->
+  <a 
+    href="#contact" 
+    (click)="scrollToSection('contact', $event)" 
+    [class.text-black]="activeSection === 'contact'"
+    class="relative py-1 transition-colors duration-200 hover:text-black 
+           after:absolute after:bottom-0 after:left-0 after:h-[2px] after:bg-black after:rounded-full after:transition-all after:duration-300"
+    [class.after:w-1/2]="activeSection === 'contact'"
+    [class.after:w-0]="activeSection !== 'contact'"
+    [class.hover:after:w-1/2]="activeSection !== 'contact'"
+  >
+    Contact
+  </a>
+
+</nav>
+
+  
   <div class="hidden md:block">
     <a href="/cv.pdf" download class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-sm inline-block cursor-pointer">
       Download CV
     </a>
   </div>
 
-  <!-- Mobile Hamburger / Close Button -->
   <button 
     (click)="toggleMenu()" 
     class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition-colors z-40" 
     aria-label="Toggle Menu"
   >
     @if (!isMenuOpen) {
-      <!-- Hamburger Icon -->
+    
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     } @else {
-      <!-- Close (X) Icon -->
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
       </svg>
