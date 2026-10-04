@@ -1,25 +1,64 @@
-
-<header class="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-20">
+<header class="w-full max-w-7xl mx-auto px-6 py-6 flex items-center justify-between relative z-30">
   
-    <a class="font-serif text-2xl italic tracking-tight text-black md:text-3xl">
-      Abdelhafid.
-    </a>
+  <a 
+    href="#home" 
+    (click)="scrollToSection('home', $event)" 
+    class="font-serif text-2xl italic tracking-tight text-black md:text-3xl cursor-pointer select-none"
+  >
+    Abdelhafid.
+  </a>
+
+
   <nav class="hidden md:flex items-center space-x-8 text-sm font-medium text-slate-700">
-    <a href="#home" class="hover:text-black transition-colors">Home</a>
-    <a href="#about" class="hover:text-black transition-colors">About</a>
-    <a href="#skills" class="hover:text-black transition-colors">Skills</a>
-    <a href="#projects" class="hover:text-black transition-colors">Projects</a>
-    <a href="#contact" class="hover:text-black transition-colors">Contact</a>
+    <a href="#home" (click)="scrollToSection('home', $event)" class="hover:text-black transition-colors cursor-pointer">Home</a>
+    <a href="#about" (click)="scrollToSection('about', $event)" class="hover:text-black transition-colors cursor-pointer">About</a>
+    <a href="#skills" (click)="scrollToSection('skills', $event)" class="hover:text-black transition-colors cursor-pointer">Skills</a>
+    <a href="#projects" (click)="scrollToSection('projects', $event)" class="hover:text-black transition-colors cursor-pointer">Projects</a>
+    <a href="#contact" (click)="scrollToSection('contact', $event)" class="hover:text-black transition-colors cursor-pointer">Contact</a>
   </nav>
+
+  <!-- Desktop CTA -->
   <div class="hidden md:block">
-    <a class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-sm">
+    <a href="/cv.pdf" download class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-sm inline-block cursor-pointer">
       Download CV
     </a>
   </div>
-  <button (click)="toggleMenu()" class="md:hidden text-slate-800 focus:outline-none" aria-label="Toggle Menu">
-    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-    </svg>
-  </button>
-</header>
 
+  <!-- Mobile Hamburger / Close Button -->
+  <button 
+    (click)="toggleMenu()" 
+    class="md:hidden text-slate-800 focus:outline-none p-2 rounded-lg hover:bg-slate-100 transition-colors z-40" 
+    aria-label="Toggle Menu"
+  >
+    @if (!isMenuOpen) {
+      <!-- Hamburger Icon -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    } @else {
+      <!-- Close (X) Icon -->
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    }
+  </button>
+
+  <!-- Mobile Navigation Menu Dropdown -->
+  @if (isMenuOpen) {
+    <div class="absolute top-full left-0 w-full bg-white/95 backdrop-blur-md shadow-lg border-b border-slate-100 p-6 flex flex-col space-y-4 md:hidden z-20 animate-in fade-in slide-in-from-top-2 duration-200">
+      <nav class="flex flex-col space-y-4 text-base font-medium text-slate-700">
+        <a href="#home" (click)="scrollToSection('home', $event)" class="hover:text-black transition-colors py-1">Home</a>
+        <a href="#about" (click)="scrollToSection('about', $event)" class="hover:text-black transition-colors py-1">About</a>
+        <a href="#skills" (click)="scrollToSection('skills', $event)" class="hover:text-black transition-colors py-1">Skills</a>
+        <a href="#projects" (click)="scrollToSection('projects', $event)" class="hover:text-black transition-colors py-1">Projects</a>
+        <a href="#contact" (click)="scrollToSection('contact', $event)" class="hover:text-black transition-colors py-1">Contact</a>
+      </nav>
+      <div class="pt-2 border-t border-slate-100">
+        <a href="/cv.pdf" download class="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-slate-800 transition-all shadow-sm w-full block text-center">
+          Download CV
+        </a>
+      </div>
+    </div>
+  }
+
+</header>
